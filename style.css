@@ -5,9 +5,86 @@ body{
     font-family: sans-serif;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    font-family: poppinslight;
 }
 
+#metade{
+    color: rgb(132, 14, 201);
+    font-weight: 900;
+    text-shadow: 5px 2px white;
+    -webkit-text-stroke: #000;
+    -webkit-text-stroke-width: 3px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 15px
+}
+
+#title{
+    flex-direction: column;
+    line-height: 10px;
+}
+
+.logo{
+    margin-right: 1.5rem;
+    height: 120px;
+    line-height: 120px;
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: 1px;
+
+}
+li{
+    display: inline-block;
+    margin: 20px;
+}
+a:link{
+    color: white;
+}
+
+a:visited{
+    color: white;
+    
+}
+
+a:hover{
+    color: rgb(132, 14, 201);
+    transition: 0.7s all;
+}
+
+a:active{
+    color: rgb(132, 14, 201);
+}
+
+metade{
+    color: rgb(132, 14, 201);
+
+}
+
+#metade:hover{
+    color: white;
+    transition: 10s, all;
+    text-shadow: 5px 2px rgb(132, 14, 201);
+}
+#borda{
+    -webkit-text-stroke: #000;
+    -webkit-text-stroke-width: 3px;
+}
+
+#sombra{
+    text-shadow: 3px 2px 3px white;
+}
+
+
 h1,h2,h3,h4,h5,h6{
+    font-family: poppinsbold; !important
     font-weight: 900;
     color: #000
 }
@@ -41,7 +118,7 @@ section.module h2{
 
 section.module.content{
     padding: 40px 0;
-    background-color: #ece7d5;
+    background-color:rgb(132, 14, 201);
 }
 
 section.module.parallax{
@@ -71,15 +148,19 @@ section.module.parallax:after{
 }
 
 section.module.parallax-1{
-    background-image: url("https://preview.redd.it/nu2nqkdr0l561.jpg?auto=webp&s=7110e7bb0b93321ec21b565e33a02642dbf7356c");
+    background-image: url("https://cfvila.com.br/blog/wp-content/uploads/2019/10/clubes-leitura-720x480.jpg");
 }
 
 section.module.parallax-2{
-    background-image: url("https://images.unsplash.com/photo-1618933974351-e38629016464?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9vayUyMGxvdmVyfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+    background-image: url(./img/jan.png);
 }
 
 section.module.parallax-3{
-    background-image: url("https://i.pinimg.com/736x/71/06/bf/7106bfc423286076fb4b6651fd6f7271.jpg");
+    background-image: url(./img/people_reading.jpg);
+}
+
+section.module.parallax-4{
+    background-image: url("https://cdn.dribbble.com/users/31752/screenshots/3651124/media/3c4ae3f46cd9eaee4f2f3f0d0eacbc25.jpg?compress=1&resize=768x576&vertical=top");
 }
 
 section.module.parallax h1{
@@ -98,8 +179,20 @@ section.module.parallax p{
 }
 
 .text-italic {
+    font-family: poppinslight;
     font-style: italic;
+    text-shadow: 3px 1px 2px black;
 }
+
+button{
+    font-family: poppinsbold;
+    background-color: white;
+    color: rgb(132, 14, 201);
+    border: solid, 4px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
 
 .row {
     display: flex;

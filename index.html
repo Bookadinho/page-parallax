@@ -3,21 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
+    <link href="./fonts.css" rel="stylesheet">
     <title>Bookadinho</title>
 </head>
-<body
+<body>
+
+    <header>
+        <div id="title">
+            <h1 class="logo"><i class="uil uil-book-open toggle-btn"> </i>booka<metade>dinho.</metade></h1>
+        </div>
+
+        <ul>
+            <a href="#"><i class="uil uil-home toggle-btn"></i><li>Início</li></a>
+            <a href="#"></i><i class="uil uil-bars toggle-btn"></i><li>Serviços</li></a>
+            <a href="#"><i class="uil uil-info-circle toggle-btn"></i><li>Sobre nós</li></a>
+            <a href="#"><i class="uil uil-desktop toggle-btn"></i><li>Suporte</li></a>
+            <a href="#"><i class="uil uil-signin toggle-btn"></i><li>Já tem uma conta?</li></a>
+        </ul>
+        <div>
+           
+        </div>
+        
+    </header>
     <div class="wrapper">
         <main>
             <section class="module parallax parallax-1">
-                <h1>Bookadinho</h1>
-                <p class="text-italic">Sua plataforma preferida para pesquisa de livros em geral</p>
+                <h1 id="borda">clube do livro</h1> <h1 id="metade" class="uil uil-books">bookadinho.</h1>
+                <p class="text-italic">O evento para quem ama livros!</p>
             </section>
 
             <section class="module content">
                 <div class="container">
-                    <h2>Apresentação</h2>
+                    <h2 id="sombra" class="uil uil-book">Apresentação</h2>
                     <p>
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa ducimus impedit qui reprehenderit dignissimos ad, voluptas ipsam iste voluptates unde at delectus, temporibus odio dicta quis atque ex vel commodi.
                     </p>
@@ -29,12 +49,39 @@
             </section>
 
             <section class="module parallax parallax-2">
-                <h1>Sobre nós</h1>
+                <h1 id="borda">Programação</h1>
             </section>
 
             <section class="module content">
                 <div class="container">
-                    <h2>Demanda</h2>
+                <h2 id= "sombra" class="uil uil-calendar-alt">Cronograma</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa ducimus impedit qui reprehenderit dignissimos ad, voluptas ipsam iste voluptates unde at delectus, temporibus odio dicta quis atque ex vel commodi.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi laboriosam deserunt consequuntur, nulla voluptate delectus, iusto, vitae rem suscipit ullam alias! Voluptatum hic, itaque omnis reprehenderit similique impedit quae enim.
+                    </p>
+                    <div>
+                        <iframe 
+                    src='./document/Cronograma - Clube de Leitura Bookadinho.pdf' id='myFrame' 
+        	        frameborder='0' style='border:0;' 
+        		    width='500' height='300'>
+                    </iframe>
+                    <br><button id="documento" onclick="print()">Imprima a programação</button></br>
+                    </div>
+                    
+                </div>
+                <script src="./index.js"></script>
+
+            </section>
+
+            <section class="module parallax parallax-4">
+                <h1 id="borda">Diversidade? Temos!</h1>
+            </section>
+
+            <section class="module content">
+                <div class="container">
+                <h2 id= "sombra" class="uil uil-calendar-alt">Gráfico de diversidade dos gêneros</h2>
                     <p>
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa ducimus impedit qui reprehenderit dignissimos ad, voluptas ipsam iste voluptates unde at delectus, temporibus odio dicta quis atque ex vel commodi.
                     </p>
@@ -43,10 +90,142 @@
                     </p>
                 </div>
 
+                <style>
+                    #chartdiv {
+                      width: 30%;
+                      height: 500px;
+                    }
+                    
+                    </style>
+                    
+                    <!-- Resources -->
+                    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+                    
+                    <!-- Chart code -->
+                    <script>
+                    am5.ready(function() {
+                    
+                    // Create root element
+                    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                    var root = am5.Root.new("chartdiv");
+                    
+                    
+                    // Set themes
+                    // https://www.amcharts.com/docs/v5/concepts/themes/
+                    root.setThemes([
+                      am5themes_Animated.new(root)
+                    ]);
+                    
+                    
+                    // Create chart
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/
+                    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                      panX: true,
+                      panY: true,
+                      wheelX: "panX",
+                      wheelY: "zoomX",
+                      pinchZoomX:true
+                    }));
+                    
+                    // Add cursor
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+                    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+                    cursor.lineY.set("visible", false);
+                    
+                    
+                    // Create axes
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+                    var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 40});
+                    xRenderer.labels.template.setAll({
+                      rotation: -30,
+                      centerY: am5.p1000,
+                      centerX: am5.p150,
+                      paddingRight: 150
+                    });
+                    
+                    var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+                      maxDeviation: 0.3,
+                      categoryField: "country",
+                      renderer: xRenderer,
+                      tooltip: am5.Tooltip.new(root, {})
+                    }));
+                    
+                    var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                      maxDeviation: 0.3,
+                      renderer: am5xy.AxisRendererY.new(root, {})
+                    }));
+                    
+                    
+                    // Create series
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                    var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+                      name: "Series 1",
+                      xAxis: xAxis,
+                      yAxis: yAxis,
+                      valueYField: "value",
+                      sequencedInterpolation: true,
+                      categoryXField: "country",
+                      tooltip: am5.Tooltip.new(root, {
+                        labelText:"{valueY}"
+                      })
+                    }));
+                    
+                    series.columns.template.setAll({ cornerRadiusTL: 5, cornerRadiusTR: 5 });
+                    series.columns.template.adapters.add("fill", function(fill, target) {
+                      return chart.get("colors").getIndex(series.columns.indexOf(target));
+                    });
+                    
+                    series.columns.template.adapters.add("stroke", function(stroke, target) {
+                      return chart.get("colors").getIndex(series.columns.indexOf(target));
+                    });
+                    
+                    
+                    // Set data
+                    var data = [{
+                      country: "Literatura Latino-Americana",
+                      value: 7
+                    }, {
+                      country: "Literatura Indígena",
+                      value: 1
+                    }, {
+                      country: "Literatura Iraniana",
+                      value: 1
+                    }, {
+                      country: "Literatura LGBTQIA+",
+                      value: 2
+                    }, {
+                      country: "Literatura Brasileira",
+                      value: 3
+                    }, {
+                      country: "Literatura Negra",
+                      value: 2
+                    }, {
+                        country: "Livros",
+                        value: 12
+                    }];
+                    
+                    xAxis.data.setAll(data);
+                    series.data.setAll(data);
+                    
+                    
+                    // Make stuff animate on load
+                    // https://www.amcharts.com/docs/v5/concepts/animations/
+                    series.appear(1000);
+                    chart.appear(1000, 100);
+                    
+                    }); // end am5.ready()
+                    </script>
+                    
+                    <!-- HTML -->
+                    <div id="chartdiv"></div>
+                    amCharts
+                
             </section>
 
             <section class="module parallax parallax-3">
-                <h1>Imaginação</h1>
+                <h1 id="borda">Inscreva-se!</h1>
             </section>
 
             <section class="module content row">
