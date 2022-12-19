@@ -50,6 +50,9 @@ a:link{
     font-family: poppinsbold;
 }
 
+.grafico{
+    text-align: center;
+}
 a:visited{
     color: white;
     
