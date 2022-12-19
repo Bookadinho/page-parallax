@@ -47,6 +47,7 @@ li{
 }
 a:link{
     color: white;
+    font-family: poppinsbold;
 }
 
 a:visited{
@@ -215,4 +216,8 @@ button{
 .my-0 {
     margin-top: 0;
     margin-bottom: 0 !important;
+}
+
+p{
+    color: white; !important
 }
